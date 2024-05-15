@@ -7,10 +7,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+      <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js" data-turbo-track="reload"></script>
     <%= javascript_importmap_tags %>
   </head>
-
+    <p style="background-color: yellow; width: 95%; margin: auto">
+      <%= debug(params) if Rails.env.development? %>
+    </p>
   <body>
+<%= render partial: "layouts/header" %>
+<%= render partial: "layouts/alerts" %>
     <%= yield %>
+
+<%= render partial: "layouts/footer" %>
   </body>
 </html>
