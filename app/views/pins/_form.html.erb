@@ -1,0 +1,32 @@
+<%= form_with model: [ @user, @pin ] do |form| %>
+  <% if @pin.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
+
+      <ul>
+        <% @pin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, required: true, minlength: 2, maxlength: 30, placeholder: "Title" %>
+  </div>
+
+  <div>
+    <%= form.label :caption, style: "display: block" %>
+    <%= form.text_area :caption, required: true, minlength: 6, maxlength: 100, placeholder: "Caption" %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

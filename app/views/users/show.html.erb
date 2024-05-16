@@ -1,1 +1,19 @@
  <%= render partial: @user %>
+ <%= tag.hr %>
+
+      <h3>Input Pin</h3>
+
+    <%= link_to "New Pin", new_user_pin_path(@user), data: { turbo_frame: dom_id(Pin.new)}, class: "" %>
+
+    <%= turbo_frame_tag Pin.new %>
+
+<h3>Pins</h3>
+
+    <%= turbo_stream_from @user, :pins %>
+
+  <div id="<%= dom_id(@user, :pins) %>">
+
+
+        <%= render @pins %>
+
+  </div>

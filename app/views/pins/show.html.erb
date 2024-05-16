@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<%= image_tag url_for(@pin.image.variant(:medium)) if @pin.image.attached? %><br>
+        <strong>Title:</strong>
+        <%= @pin.title %> |
+
+        <strong>Caption:</strong>
+        <%= @pin.caption %> |
+
+        <strong>User:</strong>
+        <%= @pin.user.username %> | 
+
+<div>
+  <%#= link_to "Edit this pin", edit_pin_path(@pin) %> |
+  <%= link_to "Back to pins", user_path(@user) %>
+  <%#= button_to "Destroy this pin", @pin, method: :delete %>
+  <%#= link_to "UserS", :back %>
+</div>
+
+<%= tag.hr %>

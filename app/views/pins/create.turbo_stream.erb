@@ -1,0 +1,7 @@
+  <%= turbo_stream.update Pin.new, "" %>
+
+  <%= turbo_stream.prepend "pins" do %>
+    <%= render @pin, user: @user %>
+  <% end %>
+
+  <%#= render_turbo_stream_flash_messages %>

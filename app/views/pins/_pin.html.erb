@@ -1,0 +1,20 @@
+  <%= turbo_frame_tag pin, class: "item" do %>
+    <div class="item">
+          <%= image_tag url_for(pin.image.variant(:thumb)) if pin.image.attached? %><br>
+        <div class="overlay">
+          <p>
+            <%#= link_to pin.title, user_pin_path(@user, pin), data: { turbo_frame: "_top" } %>
+
+            <strong>Caption:</strong>
+            <%= pin.caption %> |
+
+            <strong>User:</strong>
+            <%= pin.user.username %> |
+
+          </p>
+        <%#= link_to "Edit", edit_user_pin_path(@user, pin) %>
+        <%= button_to "Del", user_pin_path(@user, pin), method: :delete %> 
+      </div>
+    </div>
+
+  <% end %>

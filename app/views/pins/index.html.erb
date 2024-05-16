@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h2>Pins</h2>
+<%= tag.hr %>
+  <% @pins.each do |pin| %>
+    <%#= render pin %>
+      <%= image_tag(pin.image.variant(:medium), class: "pic") if pin.image.attached? %>
+<%= pin.user.username %> | <%= pin.id %> | <%= pin.title %> | <%= pin.caption %> | <%= pin.created_at %><br>
+
+
+
+  <% end %>
+<%= tag.hr %>

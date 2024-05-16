@@ -1,0 +1,10 @@
+<h2>New pin</h2>
+
+<%#= link_to sanitize("&larr; Back to user"), user_path(@user) %>
+
+<%= turbo_frame_tag @pin do %>
+| <%= link_to "Cancel", @user %>
+  <%= render "form", user: @user, pin: @pin %>
+<% end %>
+
+<br>
