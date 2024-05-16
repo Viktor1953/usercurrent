@@ -1,0 +1,5 @@
+<%= turbo_frame_tag spy do %>
+  <div>
+    <%= spy.name %> | Current mission: <%= secret_clearance ? spy.mission : "Classified" %>
+  </div>
+<% end %>

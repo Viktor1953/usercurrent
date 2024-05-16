@@ -1,0 +1,14 @@
+Your current clearance is <%= secret_clearance ? "Secret" : "None" %>
+<%= link_to "Change clearance", clearance_spies_path, method: :post %>
+
+<h1>Spies</h1>
+
+<%= turbo_stream_from "spies" %>
+<div id="spies">
+  <% @spies.each do |spy| %>
+    <%= render spy, spy: spy %>
+  <% end %>
+</div>
+
+<br>
+<%= render "spy_link" %>
