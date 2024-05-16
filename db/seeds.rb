@@ -14,6 +14,7 @@ User.create(
   rank: 1,
   password: "mmmmmmm",
   password_confirmation: "mmmmmmm",
+  admin: true
 )
 
 User.create(
@@ -23,6 +24,7 @@ User.create(
   rank: 1,
   password: "nnnnnnn",
   password_confirmation: "nnnnnnn",
+  admin: false
 )
 
 User.create(
@@ -32,6 +34,7 @@ User.create(
   rank: 1,
   password: "bbbbbbb",
   password_confirmation: "bbbbbbb",
+  admin: false
 )
 
 User.create(
@@ -41,4 +44,7 @@ User.create(
   rank: 1,
   password: "vvvvvvv",
   password_confirmation: "vvvvvvv",
+  admin: false
 )
+
+Room.create(name:'Example')
