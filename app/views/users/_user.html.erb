@@ -1,11 +1,12 @@
 <h2>Profile</h2>
   <ul>
-    <li>ID User : <%= @user.id %></li>
-    <li>Name : <%= @user.username %></li>
-    <li>Email : <%= @user.email %></li>
-    <li>Role : <%= @user.role %></li>
-    <li>Rank : <%= @user.rank %></li>
-    <li>Created_at : <%= @user.created_at %></li>
+    <li>Admin : <%= user.admin? %></li>
+    <li>ID User : <%= user.id %></li>
+    <li>Name : <%= user.username %></li>
+    <li>Email : <%= user.email %></li>
+    <li>Role : <%= user.role %></li>
+    <li>Rank : <%= user.rank %></li>
+    <li>Created_at : <%= user.created_at %></li>
     <li><%= link_to "Edit", edit_user_registration_path if current_user == @user %></li>
 
   </ul>
@@ -13,3 +14,15 @@
   <div class="logout">
 <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
 </div>
+
+  <%= tag.hr %>
+<%= render "pins/form", user: user %>
+
+    <h2>Pins</h2>
+
+  <div id="pins">
+    <% user.pins.each do |pin| %>
+      <%#= render "pins/pin", pin: pin, admin: current_user.admin? %>
+      <%= render "pins/pin", pin: pin %>
+    <% end %>
+  </div>

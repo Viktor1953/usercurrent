@@ -1,0 +1,6 @@
+<%= form_with model: Pin.new, url: user_pins_path(user) do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :caption %>
+    <%= f.file_field :image %>
+    <%= f.submit %>
+<% end %>
