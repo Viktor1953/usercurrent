@@ -2,10 +2,11 @@
 
   <%= turbo_frame_tag(["controls", dom_id(pin)]) %>
   <%#= render "pins/admin_controls", pin: pin if admin %>
-  <%#= render "pins/admin_controls", pin: pin %>
-  <%#= render "pins/user_controls", pin: pin if defined?(user) && user == pin.user %>
+ 
+  <%= render "pins/user_controls", pin: pin if defined?(user) && user == pin.user %>
 
 <p><%= "#{pin.user.username}: #{pin.title}" %>
  <%= image_tag url_for(pin.image.variant(:thumb)) if pin.image.attached? %>
 </p>
+
 <% end %>

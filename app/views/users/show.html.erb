@@ -1,11 +1,15 @@
  <p style="color: green"><%= notice %></p>
 <%= turbo_stream_from dom_id(@user) %>
 
-<%#= turbo_stream_from current_user&.to_gid_param %>
+<%= turbo_stream_from current_user&.to_gid_param %>
+
 <%# if current_user&.admin? %>
   <%#= turbo_stream_from ["admin", dom_id(@user)], id: "admin" %>
 <%# end %>
  
  <%= render partial: @user, user: :user %>
  <%= tag.hr %>
-<%= turbo_stream_from dom_id(@user) %>
+<%#= turbo_stream_from dom_id(@user) %>
+
+
+<%= current_user&.to_gid_param %>

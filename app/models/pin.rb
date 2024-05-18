@@ -10,12 +10,13 @@ class Pin < ApplicationRecord
   end
 
   after_create_commit { broadcast_to_user }
-  # after_destroy_commit { broadcast_remove_to_user }
+  after_destroy_commit { broadcast_remove_to_user }
 
   private
 
   def broadcast_to_user
   user_name = "user_#{user.id}"
+  # user_name = user.id
 
   broadcast_prepend_to user_name,
             target: 'pins',
@@ -27,16 +28,19 @@ class Pin < ApplicationRecord
   #           partial: 'pins/admin_controls',
   #           locals: { pin: self }
 
+  broadcast_append_to [user&.to_gid_param],
+              target: "controls_pin_#{id}",
+              partial: 'pins/user_controls',
+              locals: { pin: self, user:  }
+
   end
 
-  # def broadcast_remove_to_user
-  #   user_name = "user_#{user.id}"
+  def broadcast_remove_to_user
+    user_name = "user_#{user.id}"
 
-  #   broadcast_remove_to user_name,
-  #   target: "pin_#{id}"
-  # end
-
-
+    broadcast_remove_to user_name,
+    target: "pin_#{id}"
+  end
 
 
 end
