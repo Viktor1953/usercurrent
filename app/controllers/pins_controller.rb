@@ -1,6 +1,11 @@
 class PinsController < ApplicationController
   before_action :authenticate_user!
 
+
+def show 
+
+end
+
   def create
     @user = User.find(params[:user_id])
     @pin = @user.pins.build(pin_params)

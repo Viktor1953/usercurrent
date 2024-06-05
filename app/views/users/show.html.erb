@@ -8,8 +8,8 @@
 <%# end %>
  
  <%= render partial: @user, user: :user %>
+ 
  <%= tag.hr %>
 <%#= turbo_stream_from dom_id(@user) %>
-
 
 <%= current_user&.to_gid_param %>

@@ -9,6 +9,8 @@ class Pin < ApplicationRecord
     image.variant :exibition, resize_to_fit: [nil, 750]
   end
 
+
+
   after_create_commit { broadcast_to_user }
   after_destroy_commit { broadcast_remove_to_user }
 
