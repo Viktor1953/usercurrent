@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'rooms#index'
+  resources :rooms do
+    resources :messages
+  end
+
   get 'users/index'
   get 'users/show'
 
@@ -8,7 +13,7 @@ Rails.application.routes.draw do
   devise_for :users, :path_prefix => 'd'
   resources :users, :only =>[:show]
   
-  root 'pages#home'
+  # root 'pages#home'
   get 'pages/home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

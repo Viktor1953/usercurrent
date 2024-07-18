@@ -9,36 +9,38 @@
 #   end
 User.create(
   username: "Mich",
-  email: "mmm@mail.ru",
+  email: "mmm@ail.ru",
   role: 2,
   rank: 1,
-  password: "mmmmmmm",
-  password_confirmation: "mmmmmmm",
+  password: "michmmm",
+  password_confirmation: "michmmm",
 )
 
 User.create(
   username: "Nick",
-  email: "nnn@mail.ru",
+  email: "nnn@ail.ru",
   role: 0,
   rank: 1,
-  password: "nnnnnnn",
-  password_confirmation: "nnnnnnn",
+  password: "nicknnn",
+  password_confirmation: "nicknnn",
 )
 
 User.create(
   username: "Bob",
-  email: "bbb@mail.ru",
+  email: "bbb@ail.ru",
   role: 0,
   rank: 1,
-  password: "bbbbbbb",
-  password_confirmation: "bbbbbbb",
+  password: "bobbbbb",
+  password_confirmation: "bobbbbb",
 )
 
 User.create(
   username: "Vik",
-  email: "vvv@mail.ru",
+  email: "vvv@ail.ru",
   role: 0,
   rank: 1,
-  password: "vvvvvvv",
-  password_confirmation: "vvvvvvv",
+  password: "vikvvvv",
+  password_confirmation: "vikvvvv",
 )
+
+Room.create(name: "Example")

@@ -1,12 +1,12 @@
 body {
-  background-color:antiquewhite;
+  background-color: antiquewhite;
 }
+
 .container {
-  background-color:aliceblue;
+  background-color: aliceblue;
   width: 95%;
   margin: auto;
   padding: 3px;
-
 }
 
 .test {
@@ -15,7 +15,7 @@ body {
 }
 
 .testus {
-  background-color:blueviolet;
+  background-color: blueviolet;
   color: aliceblue;
 }
 
