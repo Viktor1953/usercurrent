@@ -12,4 +12,5 @@
  <%= tag.hr %>
 <%#= turbo_stream_from dom_id(@user) %>
 
-<%= current_user&.to_gid_param %>
+<%= current_user&.to_gid_param %><br>
+<%= @user&.to_gid_param %>

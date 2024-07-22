@@ -9,12 +9,10 @@ class Pin < ApplicationRecord
     image.variant :exibition, resize_to_fit: [nil, 750]
   end
 
-
-
   after_create_commit { broadcast_to_user }
   after_destroy_commit { broadcast_remove_to_user }
 
-  private
+    private
 
   def broadcast_to_user
   user_name = "user_#{user.id}"
@@ -34,15 +32,11 @@ class Pin < ApplicationRecord
               target: "controls_pin_#{id}",
               partial: 'pins/user_controls',
               locals: { pin: self, user:  }
-
   end
 
   def broadcast_remove_to_user
     user_name = "user_#{user.id}"
-
     broadcast_remove_to user_name,
     target: "pin_#{id}"
   end
-
-
 end
